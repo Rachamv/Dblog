@@ -1,13 +1,17 @@
-services: 
-- type: web
-  name: Dblog
-  env: python
-  buildCommand: "./build.sh"        # ensure it's a string
-  startCommand: cd Dblog && gunicorn dblog.wsgi.application
-  repo: https://github.com/Rachamv/Dblog.git # optional
+services:
+  - type: web
+    name: Dblog
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "cd Dblog && gunicorn dblog.wsgi:application"
+    repo: https://github.com/Rachamv/Dblog.git # optional
   # plan: standard # optional
-  healthCheckPath: /
-  # autoDeploy: false             # optional
-  envVars:
-  - key: DJANGO_SECRET_KEY
-    generateValue: true       # will generate a base64-encoded 256-bit secret
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dblog
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

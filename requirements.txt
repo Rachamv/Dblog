@@ -5,3 +5,4 @@ pycodestyle
 pytz
 sqlparse
 WhiteNoise
+poetry
