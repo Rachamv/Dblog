@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: Dblog
+    name: dblog
     env: python
     buildCommand: "./build.sh"
-    startCommand: "cd Dblog && gunicorn dblog.wsgi:application"
+    startCommand: "cd dblog && gunicorn dblog.wsgi:application"
     repo: https://github.com/Rachamv/Dblog.git # optional
   # plan: standard # optional
     envVars:
