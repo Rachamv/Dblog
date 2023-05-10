@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Headers-->
+{% include 'core/header.html' %}
+<body>
+    <!-- Topbar Start -->
+    {% include 'core/topbar.html' %}
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    {% include 'core/navbar.html' %}
+    <!-- Navbar End -->
+    <!-- Main News Slider Start -->
+    {% include 'core/slider.html' %}
+    <!-- Main News Slider End -->
+    {% block content %}
+    {% endblock %}
+    <!-- Back to Top -->
+    <!-- <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a> -->
+    <!--Footer-->
+    {% include 'core/footer.html' %}
+    <!--JS-->
+    {% include 'core/js.html' %}
+</body>
+</html>
